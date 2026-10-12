@@ -1,0 +1,84 @@
+.
+├── boundary
+│   ├── boundaryHandling.h
+│   ├── materialHandling.h
+│   └── particleBoundaries.h
+├── communication
+│   ├── equationsOfMotionResults.h
+│   ├── particleCommunicator.h
+│   ├── particleCommunicator.hh
+│   ├── particleParallelCreatorFunctions3D.h
+│   ├── relocation.h
+│   ├── superParticleSystem.h
+│   ├── superParticleSystem.hh
+│   ├── surfaceForce.h
+│   └── utilities.h
+├── contact
+│   ├── contactContainer.h
+│   ├── contactContainer.hh
+│   ├── contactFunctions.h
+│   ├── contactHelpers.h
+│   ├── contactObjects.h
+│   ├── contactObjects.hh
+│   ├── contactProperties.h
+│   ├── contactProperties.hh
+│   ├── materialProperties.h
+│   ├── materialProperties.hh
+│   ├── particleContact.h
+│   ├── particleContact.hh
+│   ├── wall.h
+│   ├── wall.hh
+│   ├── wallContact.h
+│   └── wallContact.hh
+├── descriptor
+│   ├── particleDescriptorAlias.h
+│   ├── particleDescriptorUtilities.h
+│   └── particleDescriptors.h
+├── dynamics
+│   ├── particleDynamics.h
+│   ├── particleDynamics.hh
+│   ├── particleDynamicsBase.h
+│   ├── particleDynamicsBase.hh
+│   └── particleDynamicsUtilities.h
+├── files
+├── functions
+│   ├── dataAccessWrappers.h
+│   ├── eulerRotation.h
+│   ├── lambdaLoops.h
+│   ├── particleConditions.h
+│   ├── particleContactCommunicationFunctions.h
+│   ├── particleContactDetectionFunctions.h
+│   ├── particleContactForceFunctions.h
+│   ├── particleContactFunctions.h
+│   ├── particleCreatorFunctions.h
+│   ├── particleCreatorFunctions2D.h
+│   ├── particleCreatorFunctions3D.h
+│   ├── particleCreatorHelperFunctions.h
+│   ├── particleDynamicsFunctions.h
+│   ├── particleIoFunctions.h
+│   ├── particleMotionFunctions.h
+│   ├── particleStatistics.h
+│   ├── particleTasks.h
+│   └── particleUtilities.h
+├── interaction
+│   ├── particleInteraction.h
+│   └── surfaceDetachment.h
+├── particle.h
+├── particle.hh
+├── particleManager.h
+├── particleManager.hh
+├── particleSystem.h
+├── particleSystem.hh
+├── particles.h
+├── particles.hh
+├── resolved
+│   ├── blockLatticeInteraction.h
+│   ├── blockLatticeInteraction.hh
+│   ├── momentumExchangeForce.h
+│   ├── smoothIndicatorInteraction.h
+│   ├── superLatticeInteraction.h
+│   └── superLatticeInteraction.hh
+└── subgrid
+    └── subgridUtilities.h
+
+10 directories, 72 files
