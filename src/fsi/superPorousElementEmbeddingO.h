@@ -172,6 +172,10 @@ public:
     _elementsD->setProcessingContext(ProcessingContext::Simulation);
     _sLattice.executePostProcessors(stage::fsi::Initialize{});
   }
+  void exposeParameters() {
+	  setElementCount(getElementCount());
+	  _elementsD->setProcessingContext(ProcessingContext::Simulation);
+  }
 
   template <typename FIELD>
   FieldD<T,DESCRIPTOR,FIELD> getField(std::size_t iElement) const {
