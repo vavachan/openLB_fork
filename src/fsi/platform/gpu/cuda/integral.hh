@@ -30,6 +30,7 @@
 #include <thrust/sort.h>
 #include <thrust/reduce.h>
 #include <thrust/execution_policy.h>
+#include <thrust/tuple.h>
 
 namespace olb {
 

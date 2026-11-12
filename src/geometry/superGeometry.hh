@@ -369,7 +369,11 @@ void SuperGeometry<T,D>::rename(int fromM, int toM, int testM, Vector<int,D> tes
       if(testDirection[2]*testDirection[2]<=(this->_overlap)*(this->_overlap)){
         _communicator->communicate();
         for (unsigned iC=0; iC<_block.size(); iC++) {
-          _block[iC]->rename(fromM,toM,testM,testDirection);
+		{
+			std::vector<int> dir(D);
+			for (unsigned i = 0; i < D; ++i) { dir[i] = testDirection[i]; }
+			_block[iC]->rename(fromM,toM,testM,dir);
+		}
         }
         _statistics.getStatisticsStatus() = true;
         this->_communicationNeeded = true;

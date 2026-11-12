@@ -91,6 +91,7 @@ Vector<T, utilities::dimensions::convert<D>::matrix> calculateRotationMatrix(
     // |x0| / 0 1 2 \   |x1|
     // |y0| | 3 4 5 | = |x1|
     // |z0| \ 6 7 8 /   |x1|
+    //std::cout<<angle[0]<<"\t"<<angle[1]<<"\t"<<angle[2]<<"\t"<<sin[1]<<"\n";
 
     // row 1
     rotationMatrix[0] = cos[1] * cos[2];
@@ -156,7 +157,7 @@ Vector<T,utilities::dimensions::convert<D>::matrix> matrixMatrixProduct(
 
 template <typename T, unsigned D>
 Vector<T, utilities::dimensions::convert<D>::matrix> invertRotationMatrix(
-    const Vector<T, utilities::dimensions::convert<D>::matrix>& rotationMatrix)
+    const Vector<T, utilities::dimensions::convert<D>::matrix>& rotationMatrix) any_platform
 {
   if constexpr (D == 2) {
     return Vector<T, 4>(rotationMatrix[0], rotationMatrix[2], rotationMatrix[1],
@@ -180,7 +181,7 @@ Vector<T, utilities::dimensions::convert<D>::matrix> invertRotationMatrix(
 template <typename T, unsigned D>
 Vector<T, utilities::dimensions::convert<D>::matrix>
 calculateInverseRotationMatrix(
-    const Vector<T, utilities::dimensions::convert<D>::rotation>& angle)
+    const Vector<T, utilities::dimensions::convert<D>::rotation>& angle) any_platform
 {
   return invertRotationMatrix<T, D>(calculateRotationMatrix<T, D>(angle));
 }
@@ -191,7 +192,7 @@ template <typename T, unsigned D,
 Vector<T, D> executeRotation(
     const Vector<T, D>&                                         input,
     const Vector<T, utilities::dimensions::convert<D>::matrix>& rotationMatrix,
-    const Vector<T, D>& rotationCenter = Vector<T, D>(0.))
+    const Vector<T, D>& rotationCenter = Vector<T, D>(0.)) any_platform
 {
   const Vector<T, D> dist = input - rotationCenter;
   Vector<T, D>       rotated;
@@ -227,7 +228,7 @@ template <typename T, unsigned D,
 Vector<T, D> invertRotation(
     const Vector<T, D>&                                         input,
     const Vector<T, utilities::dimensions::convert<D>::matrix>& rotationMatrix,
-    const Vector<T, D>& rotationCenter = Vector<T, D>(0.))
+    const Vector<T, D>& rotationCenter = Vector<T, D>(0.)) any_platform
 {
   const Vector<T, utilities::dimensions::convert<D>::matrix> invRotationMatrix =
       invertRotationMatrix<T, D>(rotationMatrix);
@@ -281,3 +282,4 @@ constexpr Matrix<T, 3, 3> rotateMofi(const Vector<T, 3>& mofi,
 } // namespace olb
 
 #endif
+

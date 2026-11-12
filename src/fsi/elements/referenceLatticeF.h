@@ -110,7 +110,7 @@ struct ReferenceLatticePorosityF {
     for(int d=0; d<DESCRIPTOR::d; d++)
     {
 	    if(periodicDirs[d])
-		    shiftedPhysR[d] -= domainLengths[d]*std::round(shiftedPhysR[d]/domainLengths[d]);
+		    shiftedPhysR[d] -= domainLengths[d]*util::round(shiftedPhysR[d]/domainLengths[d]);
     }
 
     //const auto rotatedPhysR = util::matrixVectorProduct(util::calculateRotationMatrix<V,DESCRIPTOR::d>(-1*elementRotation),
@@ -178,7 +178,7 @@ struct ReferenceLatticePorosityF {
     for(int d=0; d<DESCRIPTOR::d; d++)
     {
 	    if(periodicDirs[d])
-		    shiftedPhysR[d] -= domainLengths[d]*std::round(shiftedPhysR[d]/domainLengths[d]);
+		    shiftedPhysR[d] -= domainLengths[d]*util::round(shiftedPhysR[d]/domainLengths[d]);
     }
 
     Vector<V,DESCRIPTOR::d> u{translationUs, iElement};
